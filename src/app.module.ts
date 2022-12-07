@@ -10,11 +10,23 @@ import { QuizService } from './quiz/quiz.service';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      // host: 'localhost',
+      // port: 3306,
+      // username: 'root',
+      // password: '',
+      // database: 'db_quiz',
+      host: 'ap-south.connect.psdb.cloud',
       port: 3306,
-      username: 'root',
-      password: '',
-      database: 'db_quiz',
+      database: 'quiz',
+      username: 'mm1xs7ind01efqyq0q67',
+      password: 'pscale_pw_V1FWlstXY2xtV1dtUZd4HiRssWSeZPMmiBT94bkM5WN',
+      ssl: true,
+      extra: {
+        ssl: {
+          ca: '/etc/ssl/certs/ca-certificates.crt',
+          rejectUnauthorized: false,
+        },
+      },
       autoLoadEntities: true,
       synchronize: true,
     }),
@@ -23,4 +35,4 @@ import { QuizService } from './quiz/quiz.service';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

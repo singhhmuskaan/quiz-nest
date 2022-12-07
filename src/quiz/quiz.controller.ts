@@ -1,5 +1,5 @@
 import { QuizService } from './quiz.service';
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { QuizInput } from './quiz.input';
 
 @Controller('quiz')
@@ -9,6 +9,11 @@ export class QuizController {
   @Get()
   async index() {
     return this.quizService.index();
+  }
+
+  @Get(':id')
+  async show(@Param('id') id: number) {
+    return this.quizService.show(id);
   }
 
   @Post()

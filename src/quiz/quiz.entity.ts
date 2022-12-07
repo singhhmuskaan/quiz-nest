@@ -6,7 +6,7 @@ export class Quiz extends BaseEntity implements QuizInterface {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column(() => String)
+    @Column()
     title: string;
 
     @CreateDateColumn({name: 'created_at'})

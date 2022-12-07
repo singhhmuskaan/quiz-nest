@@ -9,9 +9,17 @@ export class QuizService {
     return await Quiz.find();
   }
 
-    async create(input: QuizInput ) {
-        const quiz = new Quiz();
-        Object.assign(quiz, input);
-        return await quiz.save();
+  async create(input: QuizInput) {
+    const quiz = new Quiz();
+    Object.assign(quiz, input);
+    return await quiz.save();
+  }
+
+  async show(id: number) {
+    return await Quiz.findOne({
+      where: {
+        id: id,
       }
+    });
+  }
 }
