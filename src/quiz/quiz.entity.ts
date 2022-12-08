@@ -1,21 +1,29 @@
-import { Question } from "src/question/question.entity";
-import { BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { QuizInterface } from "./quiz.interface";
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { QuizInterface } from './quiz.interface';
+import { Question } from '../question/question.entity';
 
-@Entity({name: 'quizzes'})
+@Entity({ name: 'quizzes' })
 export class Quiz extends BaseEntity implements QuizInterface {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    title: string;
+  @Column()
+  title: string;
 
-    @CreateDateColumn({name: 'created_at'})
-    createdAt: Date;
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: Date;
 
-    @UpdateDateColumn({name: 'updated_at', nullable: true})
-    updatedAt: Date;
+  @UpdateDateColumn({ name: 'updated_at', nullable: true })
+  updatedAt: Date;
 
-    @OneToMany(()=> Question, (question) => question.quiz)
-    questions: Question[];
+  @OneToMany(() => Question, (question) => question.quiz)
+  questions: Question[];
 }

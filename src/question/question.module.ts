@@ -7,6 +7,6 @@ import { QuestionService } from './question.service';
 @Module({
   imports: [TypeOrmModule.forFeature([Question])],
   controllers: [QuestionController],
-  providers: [QuestionService]
+  providers: [QuestionService],
 })
 export class QuestionModule {}

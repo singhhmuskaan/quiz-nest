@@ -4,15 +4,15 @@ import { QuestionService } from './question.service';
 
 @Controller('question')
 export class QuestionController {
-    constructor(private questionService: QuestionService){}
+  constructor(private questionService: QuestionService) {}
 
-    @Get()
-    async index(){
-        return this.questionService.index();
-    }
+  @Get()
+  async index() {
+    return this.questionService.index();
+  }
 
-    @Post()
-    async create(@Body() input: QuestionInput) {
-        return this.questionService.create(input);
-    }
+  @Post()
+  async create(@Body() input: QuestionInput) {
+    return this.questionService.create(input);
+  }
 }

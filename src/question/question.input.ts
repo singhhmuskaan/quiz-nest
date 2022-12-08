@@ -1,6 +1,6 @@
-import { Quiz } from "src/quiz/quiz.entity";
+import { Quiz } from 'src/quiz/quiz.entity';
 
-export class QuestionInput{
-    label: string;
-    quizId: Quiz;
+export class QuestionInput {
+  label: string;
+  quizId: number;
 }
