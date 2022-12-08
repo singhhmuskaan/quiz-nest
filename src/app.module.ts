@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { QuizModule } from './quiz/quiz.module';
 import { QuizController } from './quiz/quiz.controller';
 import { QuizService } from './quiz/quiz.service';
+import { QuestionModule } from './question/question.module';
+import { OptionModule } from './option/option.module';
 
 @Module({
   imports: [
@@ -31,6 +33,8 @@ import { QuizService } from './quiz/quiz.service';
       synchronize: true,
     }),
     QuizModule,
+    QuestionModule,
+    OptionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
